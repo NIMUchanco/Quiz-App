@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --size: 500px;
+    --speed: 50s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.bg {
+    filter: blur(calc(var(--size) / 5));
+    background-image: linear-gradient(rgba(55, 235, 169, 0.85), rgb(91, 55, 235));
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 50% 50% 30% / 30% 30% 50% 50%;
+    transition: all 0.25s ease-out;
+    height: 100vh;
+    width: 100vw;
+    background-color: #b7d1d2;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    background-color: #b7d1d2;
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+    height: 100vh;
+    gap: 1em;
+    padding: 2em 0 1em 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    display: grid;
+    place-items: center;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+ul {
+    display: grid;
+    gap: .65em;
+}
+
+ul li {
+    list-style: none;
+    background-color: rgb(183, 209, 210, .35);
+    padding: .5em 1em;
+    width: 100%;
+    min-width: 350px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .25s ease-out;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 0 rgb(183, 209, 210, .5);
+    margin-bottom: .5em;
+}
+
+ul li:hover {
+    background-color: rgba(183, 209, 210, .6);
+    box-shadow: 0 5px 0 0 rgb(183, 209, 210, .75);
+}
+
+button {
+    padding: .7em 0;
+    border: none;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: 1.1rem;
+    width: 150px;
+    cursor: pointer;
+    transition: all .25s ease-out;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, .75);
+    margin-bottom: .5em;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, .85);
+    box-shadow: 0 5px 0 0 rgb(0, 0, 0);
+}
+
+ul li:active,
+button:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+.quiz-wrapper {
+    display: grid;
+    place-items: center;
+    gap: 1.5em;
+}
+
+.btn-wrapper {
+    display: flex;
+    gap: 1em;
+}
+
+.answer-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+.fa-circle-check {
+    color: lightgreen;
+}
+
+.fa-circle-xmark {
+    color: lightcoral
+}
+
+@media screen and (max-width: 400px) {
+    ul li {
+        min-width: 300px;
+    }
+    
+}
